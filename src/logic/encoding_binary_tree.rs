@@ -1,4 +1,17 @@
+pub(crate) mod huff_base_node;
+pub(crate) mod huff_leaf_node;
+pub(crate) mod huff_internal_node;
+pub(crate) mod huff_tree;
+
+
 use std::collections::{HashMap};
+
+
+
+
+
+
+
 
 pub fn get_freqs(text: &str) -> HashMap<char, usize> {
     let mut freqs: HashMap<char, usize> = HashMap::new();
@@ -16,4 +29,7 @@ pub fn get_priority_vec(hashmap: &HashMap<char, usize>) ->Vec<(char, usize)> {
     priority_vec.sort_by_key(|&(_, freq)| freq);
     priority_vec
 }
+
+
+
 
